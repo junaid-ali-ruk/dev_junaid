@@ -1,0 +1,61 @@
+import { useEffect, useState } from "react";
+import { motion, stagger, useAnimate } from "framer-motion";
+import { cn } from "../../lib/utils";
+
+export const TextGenerateEffect = ({
+    words,
+    className,
+}: {
+    words: string;
+    className?: string;
+}) => {
+    const [scope, animate] = useAnimate();
+    const [mounted, setMounted] = useState(false);
+    const wordsArray = words.split(" ");
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    useEffect(() => {
+        if (mounted) {
+            animate(
+                "span",
+                {
+                    opacity: 1,
+                },
+                {
+                    duration: 2,
+                    delay: stagger(0.2),
+                }
+            );
+        }
+    }, [mounted, animate]);
+
+    const renderWords = () => {
+        return (
+            <motion.div ref={scope}>
+                {wordsArray.map((word, idx) => {
+                    return (
+                        <motion.span
+                            key={word + idx}
+                            className="text-white opacity-0"
+                        >
+                            {word}{" "}
+                        </motion.span>
+                    );
+                })}
+            </motion.div>
+        );
+    };
+
+    return (
+        <div className={cn("font-bold", className)}>
+            <div className="my-4">
+                <div className="text-white leading-snug tracking-wide">
+                    {renderWords()}
+                </div>
+            </div>
+        </div>
+    );
+};
