@@ -102,6 +102,22 @@ export const projects = [
         iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/gsap.svg"],
         link: "https://3d-website-opal.vercel.app/",
     },
+    {
+        id: 5,
+        title: "Fitness website",
+        des: "I built a fitness website with premium design and a responsive design. ",
+        img: "/p5.png",
+        iconLists: ["/re.svg", "/tail.svg", "/ts.svg"],
+        link: "https://befit-zeta.vercel.app",
+    },
+    {
+        id: 6,
+        title: "gaming website",
+        des: "I built a gaming website with premium design and a responsive design. ",
+        img: "/p6.png",
+        iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/gsap.svg"],
+        link: "https://gaming-website-inky-nine.vercel.app/",
+    },
 ];
 
 export const testimonials = [
