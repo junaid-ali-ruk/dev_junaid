@@ -15,6 +15,8 @@
     --color-white-200: #c1c2d3;
     --color-blue-100: #e4ecff;
     --color-purple: #cbacf9;
+    --color-accent-blue: #0070f3;
+    --color-accent-purple: #7928ca;
 
     /* Border radius */
     --radius-lg: 0.5rem;
@@ -30,6 +32,8 @@
     --animate-fourth: moveHorizontal 40s ease infinite;
     --animate-fifth: moveInCircle 20s ease infinite;
     --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+    --animate-float: float 6s ease-in-out infinite;
+    --animate-mesh: mesh 10s ease infinite;
 }
 
 /* Custom keyframes */
@@ -52,6 +56,32 @@
 
     to {
         background-position: -200% 0;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes mesh {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
     }
 }
 
@@ -113,6 +143,26 @@ body {
     background-color: #000319 !important;
     color: white !important;
     font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+/* Sleek custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000319;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #111928;
+    border-radius: 5px;
+    border: 3px solid #000319;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1f2a37;
 }
 
 button:active {
@@ -125,6 +175,10 @@ button:active {
     font-size: 2.25rem;
     line-height: 2.5rem;
     text-align: center;
+    background: linear-gradient(to bottom right, #fff, #9ca3af);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 @media (min-width: 768px) {
@@ -141,6 +195,27 @@ button:active {
 
 .bg-grid-black-100\/\[0\.2\] {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='100' height='100' fill='none' stroke='rgba(0,3,25,0.2)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+}
+
+/* Glassmorphism Classes */
+.glass-morphism {
+    background: rgba(17, 25, 40, 0.75);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.glass-morphism-light {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Mesh Gradient Effect */
+.mesh-gradient {
+    background: radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+        radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+        radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+    background-size: 200% 200%;
 }
 
 /* Force dark theme regardless of system preference */

@@ -1,5 +1,3 @@
-import { Fragment } from "react";
-
 import { companies, testimonials } from "../data";
 import { InfiniteMovingCards } from "./ui/InfiniteCards";
 
@@ -19,13 +17,17 @@ const Clients = () => {
                         speed="slow"
                     />
                 </div>
-                <div className="flex flex-wrap items-center justify-center gap-4 md:gap-16 max-lg:mt-10">
+                <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 max-lg:mt-10">
                     {companies.map((company) => (
-                        <Fragment key={company.id}>
-                            <div className="flex md:max-w-60 max-w-32 gap-2">
-                                <img src={company.img} className="md:w-32 w-32" alt="company" />
+                        <div key={company.id} className="flex group cursor-pointer">
+                            <div className="relative w-32 h-16 md:w-40 md:h-20 flex items-center justify-center p-3 rounded-xl glass-morphism-light transform transition-all duration-300 group-hover:scale-110 group-hover:bg-white/10 shadow-lg">
+                                <img
+                                    src={company.img}
+                                    className="w-10 h-10 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                                    alt="company"
+                                />
                             </div>
-                        </Fragment>
+                        </div>
                     ))}
                 </div>
             </div>

@@ -211,12 +211,12 @@ export const socialMedia = [
     {
         id: 1,
         img: "/git.svg",
-        link: "https://github.com/junaid",
+        link: "https://github.com/junaid-ali-ruk",
     },
     {
         id: 2,
         img: "/link.svg",
-        link: "https://linkedin.com/in/junaid",
+        link: "https://www.linkedin.com/in/junaid-ali-420932389",
     },
     {
         id: 3,

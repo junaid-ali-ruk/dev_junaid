@@ -6,7 +6,9 @@ import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero = () => {
     return (
-        <div className="pb-20 pt-36">
+        <div className="pb-20 pt-36 relative overflow-hidden w-full">
+            <div className="absolute inset-0 z-0 mesh-gradient animate-mesh opacity-20" />
+
             <div>
                 <Spotlight
                     className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -20,7 +22,7 @@ const Hero = () => {
             </div>
 
             <div
-                className="h-screen w-full bg-black-100 bg-grid-white/[0.03]
+                className="h-full w-full bg-black-100 bg-grid-white/[0.03]
         absolute top-0 left-0 flex items-center justify-center"
             >
                 <div
@@ -29,28 +31,26 @@ const Hero = () => {
                 />
             </div>
 
-            <div className="flex justify-center relative my-20 z-10">
-                <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-                    <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
+            <div className="flex justify-center relative my-10 z-10 w-full">
+                <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center animate-float">
+                    <p className="uppercase tracking-[0.3em] text-[10px] md:text-xs text-center text-blue-100 max-w-80 font-medium">
                         Fullstack Developer specializing in Modern Web Technologies
                     </p>
 
                     <TextGenerateEffect
                         words="Building Exceptional Digital Experiences with React & Next.js"
-                        className="text-center text-[40px] md:text-5xl lg:text-6xl"
+                        className="text-center text-[40px] md:text-5xl lg:text-6xl font-bold leading-tight"
                     />
 
-                    <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
+                    <p className="text-center md:tracking-wider mb-8 text-sm md:text-lg lg:text-xl text-white-100 mt-4 max-w-2xl">
                         Hi! I'm Junaid, a passionate Fullstack Developer crafting beautiful,
-                        responsive, and performant web applications. I specialize in React,
-                        Next.js, JavaScript, HTML, CSS, and Tailwind CSS to bring ideas to
-                        life.
+                        responsive, and performant web applications.
                     </p>
 
-                    <a href="https://github.com/junaid-ali-ruk">
+                    <a href="https://github.com/junaid-ali-ruk" className="group">
                         <MagicButton
                             title="View My Work"
-                            icon={<FaLocationArrow />}
+                            icon={<FaLocationArrow className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />}
                             position="right"
                         />
                     </a>
